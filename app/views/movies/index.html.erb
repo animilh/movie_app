@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Favorite Movies</h1>
+
+<table>
+<% @favorites.each do |movie| %>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td class="list_description">
+<dl>
+<dt><%= movie.name %></dt>
+<dt><%= movie.genre %></dt>
+<dt><%= movie.is_favorite %></dt>
+<dd><%= truncate(strip_tags(movie.description),
+length: 80) %></dd>
+</dl>
+</td>
+
+<td class="list_actions">
+<%= link_to 'Show', movie %><br/>
+<%= link_to 'Edit', edit_movie_path(movie) %><br/>
+<%= link_to 'Destroy', movie,
+confirm: 'Are you sure?',
+method: :delete %>
+</td>
+</tr>
+<% end %>
+</table>
+<br />
+
+<h1>All Movies</h1>
+<table>
+<% @allmovies.each do |movie|%>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td class="list_description">
+<dl>
+<dt><%= movie.name %></dt>
+<dt><%= movie.genre %></dt>
+<dt><%= movie.is_favorite %></dt>
+<dd><%= truncate(strip_tags(movie.description),
+length: 80) %></dd>
+</dl>
+</td>
+
+<td class="list_actions">
+<%= link_to 'Show', movie %><br/>
+<%= link_to 'Edit', edit_movie_path(movie) %><br/>
+<%= link_to 'Destroy', movie,
+confirm: 'Are you sure?',
+method: :delete %>
+</td>
+</tr>
+<% end %>
+</table>
+
+
+<%= link_to 'New movie', new_movie_path %>
+

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  \: MyString
+  name: MyString
+  genre: MyString
+  description: MyText
+  release_date: 2015-07-22
+  is_favorite: false
+
+two:
+  \: MyString
+  name: MyString
+  genre: MyString
+  description: MyText
+  release_date: 2015-07-22
+  is_favorite: false
